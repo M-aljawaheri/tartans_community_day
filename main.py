@@ -34,6 +34,9 @@ class Numpad:
     def getCurrentSelection(self):
         return self.buttons[self.selectedButtonIndex]
 
+def handleKeyPress(app, key):
+    pass
+
 # Define global functions for joystick handling
 def onJoyPress(app, button, joystick):
     if button == '0':  # 'X' button
@@ -82,6 +85,9 @@ def redrawAll(app):
     else:
         app.numpad.draw()
         drawLabel(f"Enter Number: {app.currentNumber}", app.width//2, 100, size=30)
+        drawLabel(f"X to backspace {app.currentNumber}", app.width - app.width//7, 200, size=30)
+        drawLabel(f"A to enter {app.currentNumber}", app.width - app.width//7, 240, size=30)
+        drawLabel(f"B to submit {app.currentNumber}", app.width - app.width//7, 280, size=30)
         if app.text:
             drawLabel(app.text, app.width//2, 150, size=20)
 
